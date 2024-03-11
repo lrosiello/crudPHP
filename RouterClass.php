@@ -52,6 +52,7 @@ class Router {
 
     public function route($url, $verb) {
         //$ruta->url //no compila!
+       
         foreach ($this->routeTable as $route) {
             if($route->match($url, $verb)){
                 //TODO: ejecutar el controller//ejecutar el controller
@@ -63,6 +64,7 @@ class Router {
         //Si ninguna ruta coincide con el pedido y se configuró ruta por defecto.
         if ($this->defaultRoute != null)
             $this->defaultRoute->run();
+        
     }
     
     public function addRoute ($url, $verb, $controller, $method) {
