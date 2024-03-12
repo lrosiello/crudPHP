@@ -26,6 +26,9 @@
             <form action='pedidos' method='GET'>
                 <button type='submit'>Mostrar Pedidos</button>
             </form>
+            <form action='valoraciones' method='GET'>
+                <button type='submit'>Mostrar Reseñas</button>
+            </form>
         </div>
         <div>
             <h1>BIENVENIDOS A LA HOME</h1>

@@ -25,7 +25,7 @@ class PedidosView
             <div class='container'>
             <div>
             <form action='insertPedido' method='POST'>
-                <button type='submit'>Crear Pedido</button>
+              
                 <select name='input_id_usuario'>";
         foreach ($usuarios as $usuario) {
             echo "<option value='{$usuario->id}'>{$usuario->nombre}</option>";
@@ -38,6 +38,7 @@ class PedidosView
         echo "</select>
                 <input name='input_pedido' type='text' placeholder='Pedido'>
                 <input name='input_fecha' type='text' placeholder='Fecha'>
+                <button type='submit'>Crear Pedido</button>
             </form>
         </div>
         

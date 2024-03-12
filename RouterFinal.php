@@ -3,6 +3,7 @@
 require_once './Controller/UsuariosController.php';
 require_once './Controller/EmpresasController.php';
 require_once './Controller/PedidosController.php';
+require_once './Controller/ValoracionesController.php';
 require_once './RouterClass.php';
 
 
@@ -43,6 +44,7 @@ $r->addRoute("insertValoracion", "POST", "ValoracionesController", "insertValora
 $r->addRoute("deleteValoracion/:ID", "GET", "ValoracionesController", "deleteValoracion"); 
 $r->addRoute("showEditValoracion/:ID", "GET", "ValoracionesController", "showEditValoracion");
 $r->addRoute("editValoracion/:ID", "POST", "ValoracionesController", "editValoracion");
+$r->addRoute("setPremium", "POST", "ValoracionesController", "setPremium");
 
 
 

@@ -26,10 +26,11 @@ class UsuariosView
             <div class='container'>
                 <div>
                     <form action='insertUsuario' method='POST'>
-                        <button type='submit'>Crear</button>
+                       
                         <input name='input_nombre' type='text' placeholder='Nombre'>
                         <input name='input_email' type='text' placeholder='Email'>
                         <input name='input_password' type='text' placeholder='Password'>
+                        <button type='submit'>Crear</button>
                     </form>
                 </div>
                 <div>

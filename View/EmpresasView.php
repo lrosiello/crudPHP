@@ -26,13 +26,14 @@ class EmpresasView
             <div class='container'>
                 <div>
                     <form action='insertEmpresa' method='POST'>
-                        <button type='submit'>Crear</button>
+                       
                         <input name='input_nombre' type='text' placeholder='Nombre'>
                         <input name='input_direccion' type='text' placeholder='Dirección'>
                         <select name='input_premium'>
                             <option value='true'>True</option>
                             <option value='false'>False</option>
                         </select>
+                        <button type='submit'>Crear</button>
                     </form>
                 </div>
                 <div>
@@ -64,6 +65,10 @@ class EmpresasView
                 </div>
                
             </div>
+            <form action='setPremium' method='POST'>
+                        <input name='input_set_premium_value' type='text' placeholder='set_premium_val'>
+                        <button type='submit'>Hazlas premium</button>
+                    </form>
             <div>
             <a href='index.php'>Volver a home</a>
     </div>
