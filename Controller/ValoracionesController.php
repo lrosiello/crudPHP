@@ -2,7 +2,7 @@
 
 require_once "./Model/ValoracionesModel.php";
 require_once "./View/ValoracionesView.php";
-require_once "./View/ValoracionEditView.php";
+require_once "./View/ValoracionesInadecuadas.php";
 require_once './libs/isLogged.php';
 
 class ValoracionesController
@@ -10,13 +10,13 @@ class ValoracionesController
 
     private $model;
     private $view;
-    private $editView;
+    private $inadecuadasView;
 
     public function __construct()
     {
         $this->model = new ValoracionesModel();
         $this->view = new ValoracionesView();
-        $this->editView = new ValoracionEditView();
+        $this->inadecuadasView = new ValoracionesInadecuadas();
     }
 
     public function getValoraciones()
@@ -86,6 +86,19 @@ class ValoracionesController
         exit();
     }
 
+    
+    public function selectInadecuadas(){
+        if (!isLogged()) { // Verifica si está logueado
+            exit();
+        }
+        if(!isAdmin()){ // Verifica si es administrador
+            exit();
+        }
+        $usuariosInadecuadas = $this->model->getUsuariosInadecuadas();
+        $valoracionesInadecuadas = $this->model->getValoracionesInadecuadas();
+        $this->inadecuadasView->showUsuariosInadecuadas($usuariosInadecuadas, $valoracionesInadecuadas);
+    }
+    
 
     public function deleteValoracion($params = null)
     {

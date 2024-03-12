@@ -80,6 +80,10 @@ class ValoracionesView
         </div>
         
         </div>
+            <form action='selectInadecuadas' method='POST'>
+                <button type='submit'>Mostrar Inadecuadas</button>
+           </form>
+        <div>
         <div>
             <a href='index.php'>Volver a home</a>
         </div>

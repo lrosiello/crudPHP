@@ -45,6 +45,7 @@ $r->addRoute("deleteValoracion/:ID", "GET", "ValoracionesController", "deleteVal
 $r->addRoute("showEditValoracion/:ID", "GET", "ValoracionesController", "showEditValoracion");
 $r->addRoute("editValoracion/:ID", "POST", "ValoracionesController", "editValoracion");
 $r->addRoute("setPremium", "POST", "ValoracionesController", "setPremium");
+$r->addRoute("selectInadecuadas", "POST", "ValoracionesController", "selectInadecuadas");
 
 
 

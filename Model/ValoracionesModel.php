@@ -16,6 +16,9 @@
         }
 
         public function insertValoracion($id_empresa,$id_usuario,$valoracion,$resena,$inadecuada){
+            if($inadecuada == "true"){
+                $inadecuada = 1;
+            }
             $sentencia = $this->db->prepare("INSERT INTO valoracion(id_empresa,id_usuario,valoracion,resena,inadecuada) VALUES(?,?,?,?,?)");
             $sentencia->execute(array($id_empresa,$id_usuario,$valoracion,$resena,$inadecuada));
             return $sentencia->rowCount();
@@ -54,6 +57,30 @@
             $sentencia = $this->db->prepare("UPDATE empresa SET premium = 1 WHERE id = ?");
             $sentencia->execute(array($id_empresa));
         }
+
+        public function getUsuariosInadecuadas(){
+            $sentencia = $this->db->prepare("SELECT u.nombre AS nombre_usuario, u.id as usuario_id, COUNT(v.id) AS total_resenas, SUM(v.inadecuada) AS total_inadecuadas
+                FROM valoracion v
+                JOIN usuario u ON v.id_usuario = u.id
+                WHERE v.inadecuada = 1
+                GROUP BY u.id
+                HAVING total_inadecuadas > 0");
+            $sentencia->execute();
+            return $sentencia->fetchAll(PDO::FETCH_OBJ);
+        }
+        
+        
+        public function getValoracionesInadecuadas(){
+            $sentencia = $this->db->prepare("SELECT v.id_usuario AS id_usuario, e.nombre AS nombre_empresa, v.id_empresa, v.valoracion, v.resena
+                FROM valoracion v
+                JOIN empresa e ON v.id_empresa = e.id
+                WHERE v.inadecuada = 1");
+            $sentencia->execute();
+            return $sentencia->fetchAll(PDO::FETCH_OBJ);
+        }
+        
+        
+        
     }
 
     
