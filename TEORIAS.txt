@@ -1,0 +1,32 @@
+A) las api rest siempre devuelven un valor entero para indicar el estado de la operacion.
+___Falso. Las API REST pueden devolver diversos tipos de respuestas, incluyendo valores JSON para indicar el estado de la operación, códigos de estado HTTP, o incluso mensajes de texto según el diseño de la API. No es necesario que siempre devuelvan un valor entero.
+
+B) en mvc las vistas deben generarse exclusivamente utilizando motor de templates como smarty por ejemplo.
+___Falso. En MVC, las vistas pueden generarse utilizando motores de templates, pero no es un requisito absoluto. Aunque es una práctica común, algunas implementaciones de MVC pueden utilizar otro enfoque para la generación de vistas.
+
+C) POST Y PUT son los unicos metodos http para enviar informacion al servidor.
+___Falso. Además de POST y PUT, existen otros métodos HTTP como GET, DELETE, PATCH, entre otros. Cada uno tiene un propósito específico. Por ejemplo, GET se utiliza para obtener información, DELETE para eliminar recursos, y PATCH para realizar modificaciones parciales.
+
+D) Se recomienda para campos de fechas, inputs especiales en javascript.
+___Verdadero. Usar inputs especiales en JavaScript para campos de fechas puede mejorar la experiencia del usuario al ofrecer calendarios interactivos y facilitar la entrada de fechas.
+
+E) PHP solo se ejecuta en xampp.
+___Falso. PHP no se limita a ejecutarse solo en XAMPP. Puede ejecutarse en diversos servidores web, como Apache, Nginx, o incluso en servidores específicos de PHP como PHP's built-in server.
+
+F) Los passwords siempre hay que guardarlos encriptados en la base de datos usando algoritmos rsa.
+___Falso. En lugar de RSA, se recomienda utilizar algoritmos de hash como bcrypt para almacenar contraseñas de manera segura. RSA es más adecuado para encriptación asimétrica y no para almacenamiento seguro de contraseñas.
+
+G) API REST solo recibe informacion en formato JSON.
+___Falso. Aunque es común que las API REST reciban y devuelvan información en formato JSON, también pueden admitir otros formatos como XML o formularios URL-encoded. La elección del formato depende del diseño de la API y de los requisitos del cliente.
+
+H) Una sesion de usuario se inicia y se mantiene en el cliente.
+___Falso. La sesión de usuario se inicia y se mantiene en el servidor. En el cliente, por lo general, se almacena un identificador de sesión, pero los datos de sesión se gestionan en el servidor.
+
+I) En mvc las vistas necesitan conocer al modelo para tener los datos a presentar.
+___Verdadero. En MVC, las vistas suelen necesitar conocer el modelo para obtener los datos que presentar. La separación de preocupaciones permite que la vista se encargue de la presentación sin lidiar directamente con la lógica de negocio.
+
+J) La busqueda de un empleado en la base de datos se programa en el controller.
+___Falso. La búsqueda de un empleado en la base de datos se realiza típicamente en el modelo, no en el controlador. El controlador se encarga de manejar las interacciones del usuario y coordinar las operaciones entre el modelo y la vista.
+
+K) Si quiero mostrar un icono en lugar del ROL del empleado solo se implementa con smarty.
+___Falso. La presentación de un icono en lugar del rol del empleado generalmente se realiza en la vista, no específicamente con Smarty. Smarty es un motor de plantillas que puede utilizarse para la generación de vistas, pero la lógica de presentación puede ser manejada en la vista sin depender del motor de plantillas específico.
