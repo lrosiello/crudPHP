@@ -35,6 +35,16 @@ class ValoracionesController
         $this->view->showValoraciones($valoraciones, $usuarios, $empresas);
     }
 
+    public function getValoracionById($params = null)
+    {
+        if (!isset($params[':ID'])){
+            return "el id no existe";
+        }
+        $id_valoracion = $params[':ID'];
+        $valoracion = $this->model->getValoracionById($id_valoracion);
+        echo json_encode($valoracion);
+    }
+
 
     public function insertValoracion()
     {
