@@ -21,6 +21,12 @@ class UsuariosModel{
         return $sentencia->fetch(PDO::FETCH_OBJ);
     }
 
+    public function getUsuarioByEmail($email){
+        $sentencia = $this->db->prepare('SELECT * FROM usuario WHERE email=?');
+        $sentencia->execute(array($email));
+        return $sentencia->fetch(PDO::FETCH_OBJ);
+    }
+
     public function insertUsuario($nombre,$email,$pass){
         $sentencia = $this->db->prepare('INSERT INTO usuario(nombre,email,password) VALUES(?,?,?)');
         $sentencia->execute(array($nombre,$email,$pass));

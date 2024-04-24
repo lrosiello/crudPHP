@@ -7,6 +7,9 @@ class EmpresaEditView
     {
     }
 
+    function showError($message){
+        echo $message;
+    }
     function showEditEmpresa($empresa)
     {
 

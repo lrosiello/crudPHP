@@ -7,6 +7,11 @@ class EmpresasView
     {
     }
 
+    function showError($message){
+        echo $message;
+    }
+
+    
     function showEmpresas($empresas)
     {
 

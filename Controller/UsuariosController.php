@@ -19,6 +19,33 @@ class UsuariosController
         $this->editView = new UsuarioEditView();
     }
 
+    function cerrarSesion()
+    {
+        session_start();
+        session_destroy();
+    }
+
+    public function login()
+{
+    if (isset($_POST['input_email']) && isset($_POST['input_password'])) {
+        $email = $_POST['input_email'];
+        $password = $_POST['input_password'];
+        $usuario = $this->model->getUsuarioByEmail($email);
+
+        if ($usuario && password_verify($password, $usuario['password'])) {
+            session_start();
+            $_SESSION['id_usuario'] = $usuario['id'];
+            $_SESSION['nombre_usuario'] = $usuario['nombre'];
+            // Puedes añadir más datos a la sesión si lo necesitas
+            header('Location: http://localhost/repaso/usuarios');
+            exit();
+        } else {
+            echo "Usuario o contraseña incorrectos";
+        }
+    } else {
+        echo "Debes ingresar un email y una contraseña";
+    }
+}
 
     public function getUsuarios()
     {
@@ -83,5 +110,4 @@ class UsuariosController
     }
 
 
-    
 }
